@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Check List Centro</title>
+</head>
+<style>
+  header {
+    font-size: 48px;
+    text-align: center;
+    background-color: #4eb9e3;
+    border: 2px solid #297db9;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+}
+  #mcmv{
+  font-size: 20px;
+  height: 30px;
+  margin: 110px 20px 30px 40px;
+  }
+  #sbpe{
+  font-size: 20px;
+  height: 30px;
+  margin: 110px 20px 30px 40px;
+  }
+  #box2 {
+  display: inline-block;
+  }
+  #box1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+    margin: 20px;
+    gap: 100px;
+}
+#sbpe, #mcmv {
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+#box {
+    text-align: center;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+#doc, #resid, #renda, #civil, #ctps, #ir {
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+legend {
+    font-size: 24px;
+}
+  input[type="checkbox"].custom-checkbox {
+          transform: scale(1.5);
+}
+</style>
+<body>
+<header>Analise de Processo</header>
+<fieldset id="box1">
+  <div id="sbpe">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="doc" />
+    <label class="1" for="doc">SBPE</label>
+  </div>
+  <div id="mcmv">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="doc" />
+    <label class="2" for="doc">MCMV</label>
+  </div>
+
+<fieldset id="box2">
+  <h1>Modaliades do Processo</h1>
+        <div>
+            <input type="checkbox" id="terrenoConstrucao">
+            <label for="terrenoConstrucao">Terreno e Construção</label>
+        </div>
+        <div>
+            <input type="checkbox" id="construcaoTerrenoProprio">
+            <label for="construcaoTerrenoProprio">Construção em Terreno Próprio</label>
+        </div>
+        <div>
+            <input type="checkbox" id="usado">
+            <label for="usado">Usado</label>
+        </div>
+        <div>
+            <input type="checkbox" id="novo">
+            <label for="novo">Novo</label>
+        </div>
+        <div>
+            <input type="checkbox" id="empreendimento">
+            <label for="empreendimento">Empreendimento</label>
+        </div>
+        <div>
+            <input type="checkbox" id="terreno">
+            <label for="terreno">Terreno</label>
+        </div>
+</fieldset>
+</fieldset>
+<fieldset id="box">
+  <legend style="text-align: center">Documentação Obrigatória</legend>
+  <div id="doc">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="doc" />
+    <label for="doc">Documento de identificação</label>
+  </div>
+  <div id="resid">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="resid" />
+    <label for="resid">Comprovante de Residência</label>
+  </div>
+  <div id="renda">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="music" />
+    <label for="renda">Comprovante de renda</label>
+  </div>
+  <div id="civil">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="civil" />
+    <label for="civil">Certidão de Estado Civil</label>
+  </div>
+  <div id="ctps">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="Ctps" />
+    <label for="Ctps">Carteira de Trabalho</label>
+  </div>
+  <div id="ir">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="ir" />
+    <label for="ir">Imposto de renda</label>
+  </div>
+</fieldset>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        fieldset {
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        legend {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .custom-checkbox {
+            transform: scale(1.5);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .result span {
+            font-weight: bold;
+        }
+
+        .green-checkbox {
+            color: green;
+        }
+
+        .red-checkbox {
+            color: red;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4eb9e3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .date-input {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Adicionar Datas</legend>
+        <button onclick="addDateFields()">Adicionar Data</button>
+        <div id="dateFields"></div>
+       <button onclick="calculateDays()">Calcular Dias</button>
+        <div class="result">
+            <span>Total de dias:</span>
+            <span id="totalDays">0</span>
+        </div>
+      <div class="result">
+            <input type="checkbox" id="workYearsCheckbox" disabled>
+            <span id="resultMessage"></span>
+        </div>
+    </fieldset>
+    <script>
+        let dateCounter = 0;
+
+        function addDateFields() {
+            dateCounter++;
+
+            const dateFieldsDiv = document.getElementById("dateFields");
+
+            const startDateInput = document.createElement("input");
+            startDateInput.type = "date";
+            startDateInput.className = "date-input";
+            startDateInput.id = `startDate${dateCounter}`;
+            startDateInput.placeholder = "Data de Início";
+
+            const endDateInput = document.createElement("input");
+            endDateInput.type = "date";
+            endDateInput.className = "date-input";
+            endDateInput.id = `endDate${dateCounter}`;
+            endDateInput.placeholder = "Data de Término";
+
+            dateFieldsDiv.appendChild(startDateInput);
+            dateFieldsDiv.appendChild(endDateInput);
+        }
+
+        function calculateDays() {
+            let totalDays = 0;
+
+            for (let i = 1; i <= dateCounter; i++) {
+                const startDate = new Date(document.getElementById(`startDate${i}`).value);
+                const endDate = new Date(document.getElementById(`endDate${i}`).value);
+
+                const timeDiff = endDate - startDate;
+                totalDays += timeDiff / (1000 * 60 * 60 * 24);
+            }
+
+            document.getElementById("totalDays").textContent = totalDays.toFixed(0);
+            document.getElementById("workYearsCheckbox").checked = false;
+            document.getElementById("resultMessage").textContent = "";
+
+            if (totalDays >= 3 * 365) {
+                document.getElementById("workYearsCheckbox").checked = true;
+                document.getElementById("workYearsCheckbox").className = "green-checkbox";
+                document.getElementById("resultMessage").textContent = "Este cliente tem os três anos de carteira trabalhados.";
+            } else {
+                document.getElementById("workYearsCheckbox").checked = true;
+                document.getElementById("workYearsCheckbox").className = "red-checkbox";
+                document.getElementById("resultMessage").textContent = "Este cliente não tem os três anos de carteira trabalhados.";
+            }
+        }
+    </script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<button id="generatePdf">Gerar PDF</button>
+<script>
+    const generatePdfButton = document.getElementById("generatePdf");
+
+    generatePdfButton.addEventListener("click", () => {
+        const element = document.body; // Elemento que você deseja transformar em PDF
+
+        html2pdf()
+            .from(element)
+            .save("documento.pdf"); // Nome do arquivo PDF gerado
+    });
+</script>
+</html>
