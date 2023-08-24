@@ -25,6 +25,11 @@
   height: 30px;
   margin: 110px 20px 30px 40px;
   }
+  #pro{
+  font-size: 20px;
+  height: 30px;
+  margin: 110px 20px 30px 40px;
+  }
   #box2 {
   display: inline-block;
   }
@@ -35,7 +40,7 @@
     margin: 20px;
     gap: 100px;
 }
-#sbpe, #mcmv {
+#sbpe, #mcmv, #pro{
     text-align: center;
     background-color: #f0f0f0;
     border: 2px solid #ccc;
@@ -67,77 +72,7 @@ legend {
   input[type="checkbox"].custom-checkbox {
           transform: scale(1.5);
 }
-</style>
-<body>
-<header>Analise de Processo</header>
-<fieldset id="box1">
-  <div id="sbpe">
-    <input type="checkbox" class="custom-checkbox" name="documentation" value="doc" />
-    <label class="1" for="doc">SBPE</label>
-  </div>
-  <div id="mcmv">
-    <input type="checkbox" class="custom-checkbox" name="documentation" value="doc" />
-    <label class="2" for="doc">MCMV</label>
-  </div>
-
-<fieldset id="box2">
-  <h1>Modaliades do Processo</h1>
-        <div>
-            <input type="checkbox" id="terrenoConstrucao">
-            <label for="terrenoConstrucao">Terreno e Construção</label>
-        </div>
-        <div>
-            <input type="checkbox" id="construcaoTerrenoProprio">
-            <label for="construcaoTerrenoProprio">Construção em Terreno Próprio</label>
-        </div>
-        <div>
-            <input type="checkbox" id="usado">
-            <label for="usado">Usado</label>
-        </div>
-        <div>
-            <input type="checkbox" id="novo">
-            <label for="novo">Novo</label>
-        </div>
-        <div>
-            <input type="checkbox" id="empreendimento">
-            <label for="empreendimento">Empreendimento</label>
-        </div>
-        <div>
-            <input type="checkbox" id="terreno">
-            <label for="terreno">Terreno</label>
-        </div>
-</fieldset>
-</fieldset>
-<fieldset id="box">
-  <legend style="text-align: center">Documentação Obrigatória</legend>
-  <div id="doc">
-    <input type="checkbox" class="custom-checkbox" name="documentation" value="doc" />
-    <label for="doc">Documento de identificação</label>
-  </div>
-  <div id="resid">
-    <input type="checkbox" class="custom-checkbox" name="documentation" value="resid" />
-    <label for="resid">Comprovante de Residência</label>
-  </div>
-  <div id="renda">
-    <input type="checkbox" class="custom-checkbox" name="documentation" value="music" />
-    <label for="renda">Comprovante de renda</label>
-  </div>
-  <div id="civil">
-    <input type="checkbox" class="custom-checkbox" name="documentation" value="civil" />
-    <label for="civil">Certidão de Estado Civil</label>
-  </div>
-  <div id="ctps">
-    <input type="checkbox" class="custom-checkbox" name="documentation" value="Ctps" />
-    <label for="Ctps">Carteira de Trabalho</label>
-  </div>
-  <div id="ir">
-    <input type="checkbox" class="custom-checkbox" name="documentation" value="ir" />
-    <label for="ir">Imposto de renda</label>
-  </div>
-</fieldset>
-<head>
-    <style>
-        body {
+body {
             font-family: Arial, sans-serif;
             font-size: 16px;
             margin: 0;
@@ -195,9 +130,151 @@ legend {
             display: block;
             margin: 10px 0;
         }
-    </style>
-</head>
+</style>
 <body>
+<header>Analise de Processo</header>
+<fieldset id="box1">
+  <div id="sbpe">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="doc"  />
+    <label title="Para quem não pretende contratar outros produtos e serviços com a CAIXA.">SBPE<span title="T2"></span></label>
+  </div>
+  <div id="mcmv">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="doc" />
+    <label title="Para esse Produto, o cliente não pode ter imovel nome na região limitrofre, renda até 8.000, conforme limite da cidade  ">MCMV<span title="T1"></span></label>
+  </div>
+    <div id="pro">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="doc" />
+    <label title="Para este produto, pelo menos um dos participantes tem que comprovar 03 anos de trabalho sob o regime do FGTS e possuir contrato de trabalho sob regime do FGTS ou saldo na conta vinculada do FGTS, na data de assinatura, com no mínimo 10% do valor de avaliação do imóvel quando tiver contrato de trabalho inativo.">Pró cotista <span title="T1"></span></label>
+  </div>
+<fieldset id="box2">
+  <h1>Modaliades do Processo</h1>
+        <div>
+            <input type="checkbox" id="terrenoConstrucao">
+            <label for="terrenoConstrucao">Terreno e Construção</label>
+        </div>
+        <div>
+            <input type="checkbox" id="construcaoTerrenoProprio">
+            <label for="construcaoTerrenoProprio">Construção em Terreno Próprio</label>
+        </div>
+        <div>
+            <input type="checkbox" id="usado">
+            <label for="usado">Usado</label>
+        </div>
+        <div>
+            <input type="checkbox" id="novo">
+            <label for="novo">Novo</label>
+        </div>
+        <div>
+            <input type="checkbox" id="empreendimento">
+            <label for="empreendimento">Empreendimento</label>
+        </div>
+        <div>
+            <input type="checkbox" id="terreno">
+            <label for="terreno">Terreno</label>
+        </div>
+</fieldset>
+</fieldset>
+<fieldset id="box">
+  <legend style="text-align: center">Documentação Obrigatória</legend>
+  <div id="doc">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="doc" onchange="mostrarCheckbox0()" />
+    <label for="doc">Documento de identificação</label>
+  </div>
+    <div id="novaCheckbox0" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Naturalidade
+  </label>
+</div>
+  <div id="resid">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="resid" onchange="mostrarCheckbox1()"/>
+    <label for="resid">Comprovante de Residência</label>
+  </div>
+    <div id="novaCheckbox1" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Número do CEP
+  </label>
+</div>
+  <div id="renda">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="music" onchange="mostrarCheckbox2(),mostrarCheckbox2_1() "/>
+    <label for="renda">Comprovante de renda</label>
+  </div>
+    </div>
+    <div id="novaCheckbox2" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Data de admissão
+  </label>
+</div>
+  </div>
+    <div id="novaCheckbox2_1" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Número do CNPJ
+  </label>
+</div>
+  <div id="civil">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="civil" onchange="mostrarCheckbox()"/>
+    <label for="civil">Certidão de Estado Civil</label>
+  </div>
+  <div id="ctps">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="Ctps" onchange="mostrarCheckbox3()"/>
+    <label for="Ctps">Carteira de Trabalho</label>
+  </div>
+  </div>
+    <div id="novaCheckbox3" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Número do PIS
+  </label>
+</div>
+  <div id="ir">
+    <input type="checkbox" class="custom-checkbox" name="documentation" value="ir" onchange="mostrarCheckbox4(), mostrarCheckbox4_1(), mostrarCheckbox4_2(), mostrarCheckbox4_3(), mostrarCheckbox4_4(), mostrarCheckbox4_5()"/>
+    <label for="ir">Imposto de renda</label>
+  </div>
+  </div>
+    <div id="novaCheckbox4" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Declaração e recibo
+  </label>
+</div>
+  </div>
+    <div id="novaCheckbox4_1" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Está no ano vigente
+  </label>
+</div>
+  </div>
+    <div id="novaCheckbox4_2" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Foi Declarado dentro do prazo
+  </label>
+</div>
+  </div>
+    <div id="novaCheckbox4_3" style="display: none;">
+  <label>
+    <input type="checkbox">
+    está a cima do limite de isenção ou declarou mais de 40.000 nas distribuições de lucros
+  </label>
+</div>
+  </div>
+    <div id="novaCheckbox4_4" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Dependente
+  </label>
+</div>
+  </div>
+    <div id="novaCheckbox4_5" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Tem Imóvel no nome
+  </label>
+</div>
     <fieldset>
         <legend>Adicionar Datas</legend>
         <button onclick="addDateFields()">Adicionar Data</button>
@@ -212,6 +289,7 @@ legend {
             <span id="resultMessage"></span>
         </div>
     </fieldset>
+</fieldset>
     <script>
         let dateCounter = 0;
 
@@ -262,7 +340,6 @@ legend {
             }
         }
     </script>
-</body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <button id="generatePdf">Gerar PDF</button>
 <script>
@@ -275,5 +352,77 @@ legend {
             .from(element)
             .save("documento.pdf"); // Nome do arquivo PDF gerado
     });
+</script>
+<script>
+function mostrarCheckbox0() {
+  var checkboxDiv = document.getElementById("novaCheckbox0");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox1() {
+  var checkboxDiv = document.getElementById("novaCheckbox1");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox2() {
+  var checkboxDiv = document.getElementById("novaCheckbox2");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox2_1() {
+  var checkboxDiv = document.getElementById("novaCheckbox2_1");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox2_2() {
+  var checkboxDiv = document.getElementById("novaCheckbox2_2");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox3() {
+  var checkboxDiv = document.getElementById("novaCheckbox3");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox4() {
+  var checkboxDiv = document.getElementById("novaCheckbox4");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox4_1() {
+  var checkboxDiv = document.getElementById("novaCheckbox4_1");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox4_2() {
+  var checkboxDiv = document.getElementById("novaCheckbox4_2");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox4_3() {
+  var checkboxDiv = document.getElementById("novaCheckbox4_3");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox4_4() {
+  var checkboxDiv = document.getElementById("novaCheckbox4_4");
+  checkboxDiv.style.display = "block";
+}
+</script>
+<script>
+function mostrarCheckbox4_5() {
+  var checkboxDiv = document.getElementById("novaCheckbox4_5");
+  checkboxDiv.style.display = "block";
+}
 </script>
 </html>
