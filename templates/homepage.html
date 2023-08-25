@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Check List Centro</title>
+    <title>Resumo de Entrada</title>
 </head>
 <style>
   header {
@@ -218,6 +218,13 @@ body {
     <input type="checkbox" class="custom-checkbox" name="documentation" value="civil" onchange="mostrarCheckbox()"/>
     <label for="civil">Certidão de Estado Civil</label>
   </div>
+    </div>
+    <div id="novaCheckbox" style="display: none;">
+  <label>
+    <input type="checkbox">
+    Estado civil
+  </label>
+</div>
   <div id="ctps">
     <input type="checkbox" class="custom-checkbox" name="documentation" value="Ctps" onchange="mostrarCheckbox3()"/>
     <label for="Ctps">Carteira de Trabalho</label>
@@ -352,6 +359,12 @@ body {
             .from(element)
             .save("documento.pdf"); // Nome do arquivo PDF gerado
     });
+</script>
+<script>
+function mostrarCheckbox() {
+  var checkboxDiv = document.getElementById("novaCheckbox");
+  checkboxDiv.style.display = "block";
+}
 </script>
 <script>
 function mostrarCheckbox0() {
